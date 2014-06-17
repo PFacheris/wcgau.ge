@@ -11,4 +11,6 @@ from app.routes import index
 
 from app.routes import Matches
 
-from app.lib import WCGaugeStream
+from app.lib.WCGaugeStream import WCGaugeStream
+
+wcgs = WCGaugeStream()
