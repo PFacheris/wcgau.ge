@@ -5,14 +5,12 @@ from app import app, db
 from app.models import Match
 import datetime
 import requests
-import threading
 from app.config.keys import *
 
 class WCGaugeStream():
 
     def __init__(self):
-        self.thread = threading.Thread(target=self.startStream)
-        self.thread.start()
+        self.startStream()
 
     def startStream(self):
         WCGaugeAuth = tweepy.OAuthHandler(TWITTER_API_KEY, TWITTER_SECRET_KEY)
@@ -28,7 +26,10 @@ class WCGaugeStream():
 
 
         l = StreamListener()
-        streamer = tweepy.Stream(auth=WCGaugeAuth, listener=l)
+        self.streamer = tweepy.Stream(auth=WCGaugeAuth, listener=l)
         #setTerms = ['hello', 'goodbye', 'goodnight', 'good morning']
         setTerms = ['world cup', 'world cup 2014', 'worldcup', 'worldcup2014']
-        streamer.filter(track=setTerms)
+        self.streamer.filter(track=setTerms, async=True)
+
+    def stopStream(self):
+        self.streamer.disconnect()
