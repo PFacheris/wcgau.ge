@@ -7,7 +7,7 @@ import datetime
 import requests
 from multiprocessing import Pool
 
-class WCGauge():
+class WCGaugeStream():
 
     def __init__(self):
         self.pool = Pool(processes=1)
