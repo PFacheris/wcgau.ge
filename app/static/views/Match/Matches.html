@@ -1,0 +1,217 @@
+<div>
+
+    <h2>Matches</h2>
+
+    <script type = "text/ng-template" id="Match-save.html">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="form" role="form" novalidate
+                      class="ng-scope ng-invalid ng-invalid-required ng-dirty"
+                      ng-submit="ok()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close"
+                                ng-click="cancel()">&times;</button>
+                        <h4 class="modal-title" id="myMatchLabel">Create or edit a Match</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="Match.id" readonly>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label>HomeName:</label>
+                            
+                            <input type="text" class="form-control" name="HomeName"
+                                   ng-model="Match.HomeName" ng-required="true"
+                                   ng-minlength=1 ng-maxlength=255/>
+                            <span class="error" ng-show="form.HomeName.$error.minlength">Must be at least 1 characters.</span>
+                            <span class="error" ng-show="form.HomeName.$error.maxlength">Must be at most 255 characters.</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>AwayName:</label>
+                            
+                            <input type="text" class="form-control" name="AwayName"
+                                   ng-model="Match.AwayName" ng-required="true"
+                                   ng-minlength=1 ng-maxlength=255/>
+                            <span class="error" ng-show="form.AwayName.$error.minlength">Must be at least 1 characters.</span>
+                            <span class="error" ng-show="form.AwayName.$error.maxlength">Must be at most 255 characters.</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Percentage:</label>
+                            
+                            <input type="number" step="any" class="form-control" name="Percentage"
+                                   ng-model="Match.Percentage" ng-required="true"
+                                   min=0 max=100/>
+                            <span class="error" ng-show="form.Percentage.$error.min">Must be greater than or equal to 0.</span>
+                            <span class="error" ng-show="form.Percentage.$error.max">Must be less than or equal to 100.</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>TSAdded:</label>
+                            
+                            <input type="text" class="form-control" name="TSAdded" ui-date="TSAddedDateOptions" ui-date-format="yy-mm-dd" 
+                                   ng-model="Match.TSAdded" ng-required="true"/>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>HomeScore:</label>
+                            
+                            <input type="number" class="form-control" name="HomeScore"
+                                   ng-model="Match.HomeScore" ng-required="true"
+                                   min=0 />
+                            <span class="error" ng-show="form.HomeScore.$error.min">Must be greater than or equal to 0.</span>
+                            <span class="error" ng-show="form.HomeScore.$error.max">Must be less than or equal to .</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>AwayScore:</label>
+                            
+                            <input type="number" class="form-control" name="AwayScore"
+                                   ng-model="Match.AwayScore" ng-required="true"
+                                   min=0 />
+                            <span class="error" ng-show="form.AwayScore.$error.min">Must be greater than or equal to 0.</span>
+                            <span class="error" ng-show="form.AwayScore.$error.max">Must be less than or equal to .</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>CurrentGameMinute:</label>
+                            
+                            <input type="number" class="form-control" name="CurrentGameMinute"
+                                   ng-model="Match.CurrentGameMinute" ng-required="true"
+                                   min=0 />
+                            <span class="error" ng-show="form.CurrentGameMinute.$error.min">Must be greater than or equal to 0.</span>
+                            <span class="error" ng-show="form.CurrentGameMinute.$error.max">Must be less than or equal to .</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>StartTime:</label>
+                            
+                            <input type="text" class="form-control" name="StartTime" ui-date="StartTimeDateOptions" ui-date-format="yy-mm-dd" 
+                                   ng-model="Match.StartTime" ng-required="true"/>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>AwayTeamID:</label>
+                            
+                            <input type="text" class="form-control" name="AwayTeamID"
+                                   ng-model="Match.AwayTeamID" ng-required="true"
+                                   />
+                            <span class="error" ng-show="form.AwayTeamID.$error.minlength">Must be at least  characters.</span>
+                            <span class="error" ng-show="form.AwayTeamID.$error.maxlength">Must be at most  characters.</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>HomeTeamID:</label>
+                            
+                            <input type="text" class="form-control" name="HomeTeamID"
+                                   ng-model="Match.HomeTeamID" ng-required="true"
+                                   />
+                            <span class="error" ng-show="form.HomeTeamID.$error.minlength">Must be at least  characters.</span>
+                            <span class="error" ng-show="form.HomeTeamID.$error.maxlength">Must be at most  characters.</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>MatchID:</label>
+                            
+                            <input type="text" class="form-control" name="MatchID"
+                                   ng-model="Match.MatchID" ng-required="true"
+                                   />
+                            <span class="error" ng-show="form.MatchID.$error.minlength">Must be at least  characters.</span>
+                            <span class="error" ng-show="form.MatchID.$error.maxlength">Must be at most  characters.</span>
+                        </div>
+                        
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" ng-click="cancel()">Cancel
+                        </button>
+                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </script>
+
+    <button class="btn btn-primary btn-lg" ng-click="create()">
+        <span class="glyphicon glyphicon-flash"></span> Create a new Match
+    </button>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                
+                <th>HomeName</th>
+                
+                <th>AwayName</th>
+                
+                <th>Percentage</th>
+                
+                <th>TSAdded</th>
+                
+                <th>HomeScore</th>
+                
+                <th>AwayScore</th>
+                
+                <th>CurrentGameMinute</th>
+                
+                <th>StartTime</th>
+                
+                <th>AwayTeamID</th>
+                
+                <th>HomeTeamID</th>
+                
+                <th>MatchID</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="Match in Matches">
+                <td>{{Match.id}}</td>
+                
+                <td>{{Match.HomeName }}</td>
+                
+                <td>{{Match.AwayName }}</td>
+                
+                <td>{{Match.Percentage }}</td>
+                
+                <td>{{Match.TSAdded  | date:'yyyy-MM-dd'}}</td>
+                
+                <td>{{Match.HomeScore }}</td>
+                
+                <td>{{Match.AwayScore }}</td>
+                
+                <td>{{Match.CurrentGameMinute }}</td>
+                
+                <td>{{Match.StartTime  | date:'yyyy-MM-dd'}}</td>
+                
+                <td>{{Match.AwayTeamID }}</td>
+                
+                <td>{{Match.HomeTeamID }}</td>
+                
+                <td>{{Match.MatchID }}</td>
+                
+                <td>
+                    <button type="submit"
+                            ng-click="update(Match.id)"
+                            class="btn">
+                        <span class="glyphicon glyphicon-pencil"></span> Edit
+                    </button>
+                    <button type="submit"
+                            ng-click="delete(Match.id)"
+                            class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove-circle"></span> Delete
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

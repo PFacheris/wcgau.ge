@@ -1,5 +1,97 @@
 {
 	"baseName": "WCGUA.GE",
-	"entities": [],
+	"entities": [
+		{
+			"name": "Match",
+			"attrs": [
+				{
+					"attrName": "HomeName",
+					"attrType": "String",
+					"minLength": "1",
+					"maxLength": "255",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "AwayName",
+					"attrType": "String",
+					"minLength": "1",
+					"maxLength": "255",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "Percentage",
+					"attrType": "Float",
+					"min": "0",
+					"max": "100",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "TSAdded",
+					"attrType": "Date",
+					"dateConstraint": "Past",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "HomeScore",
+					"attrType": "Integer",
+					"min": "0",
+					"max": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "AwayScore",
+					"attrType": "Integer",
+					"min": "0",
+					"max": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "CurrentGameMinute",
+					"attrType": "Integer",
+					"min": "0",
+					"max": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "StartTime",
+					"attrType": "Date",
+					"dateConstraint": "Past",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "AwayTeamID",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "HomeTeamID",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "MatchID",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				}
+			]
+		}
+	],
 	"resources": []
 }
