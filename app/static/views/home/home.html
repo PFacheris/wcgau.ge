@@ -1,12 +1,13 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-8">
-            <h1>Welcome to WCGUA.GE!</h1>
-            <p class="lead">This is your homepage, ready for editing</p>
-
-            <p>
-             <span translate="main.like">If you like this Angular-Flask generator, please give us a star at </span>&nbsp;<a href="https://github.com/rayokota/generator-angular-flask" target="_blank" translate="main.github">Github</a>!
-            </p>
+<a ng-click="set(90)">a</a>
+<div class="gauge-container">
+    <div class="gauge">
+        <div gauge-circle class="gauge-outer-circle">
+            <div gauge-circle class="color-circle team-1"></div>
+            <div gauge-circle class="color-circle team-2" ng-style="getAngleStyle()"></div>
         </div>
+        <div gauge-circle class="gauge-outer-circle gauge-offset"></div>
+        <div gauge-circle class="gauge-outer-circle gauge-glass"></div>
+        <div gauge-circle class="gauge-inner-circle"></div>
+        <img class="gauge-needle" src="/img/gauge.png" ng-style="getAngleStyle()"></img>
     </div>
 </div>

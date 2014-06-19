@@ -1,5 +1,104 @@
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700");
+@import url("http://fonts.googleapis.com/css?family=Londrina+Outline");
+@import url("http://fonts.googleapis.com/css?family=Quantico:400,700");
+
 body {
-  margin-top: 60px;
-  padding: 10px;
-  background-color: #ECF0F1;
+  margin:0;
+  padding:0;
+  background:#67afe2;
+  min-width: 450px;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    color: #f1f1f1 !important;
+}
+
+.main {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.navbar.transparent {
+    background: none;
+    border: none;
+}
+
+.navbar-brand {
+    font-weight: 300;
+}
+
+.gauge-container {
+    position:relative;
+    width:60%;
+    margin-left:20%;
+    margin-right:20%;
+    overflow:hidden;
+}
+
+.gauge-container > .gauge {
+    width:100%;
+}
+
+.gauge-container > .gauge > .gauge-outer-circle {
+    width:100%;
+    background: none;
+    border: 33px solid #d5d5d5;
+    border-bottom: none;
+    box-sizing: border-box;
+}
+
+.gauge-container > .gauge > .gauge-offset {
+    position: absolute;
+    bottom:0;
+    border: 22px solid #f1f1f1;
+    border-bottom: none;
+}
+
+.gauge-container > .gauge > .gauge-glass {
+    position: absolute;
+    bottom:0;
+    border: none;
+    background:rgba(0,0,0,.25);
+}
+
+.gauge-container > .gauge > .gauge-outer-circle > .color-circle {
+    position: absolute;
+    bottom:0;
+    left:0;
+    background:green;
+    width:98%;
+    -webkit-transform-origin: 50% 100%;
+    -webkit-transition: -webkit-transform .5s;
+}
+
+.gauge-container > .gauge > .gauge-outer-circle > .color-circle.team-2 {
+    -webkit-transform: rotate(90deg);
+    background:red;
+}
+
+
+
+.gauge-container > .gauge > .gauge-inner-circle {
+    width:18%;
+    background: none;
+    /*border: 33px solid #f1f1f1;*/
+    border-bottom: none;
+    box-sizing: border-box;
+    background: rgb(48, 48, 48);
+    position: absolute;
+    bottom: 0;
+    left: 41%;
+}
+
+.gauge-needle {
+    width: 50%;
+    position: absolute;
+    bottom: -11%;
+    left: 0;
+    -webkit-transform: rotate(90deg);
+    -webkit-transform-origin: center right;
+    -webkit-transition: -webkit-transform .5s;
 }
